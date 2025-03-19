@@ -1,0 +1,12 @@
+2025-03-19 06:07:18,355 - telethon.crypto.aes - INFO - cryptg detected, it will be used for encryption
+2025-03-19 06:07:18,642 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-03-19 06:07:20,936 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-03-19 06:07:21,551 - __main__ - ERROR - Критическая ошибка: EOF when reading a line
+2025-03-19 06:21:11,360 - telethon.crypto.aes - INFO - cryptg detected, it will be used for encryption
+2025-03-19 06:21:11,550 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-03-19 06:21:11,692 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-03-19 06:21:12,356 - __main__ - ERROR - Критическая ошибка: EOF when reading a line
+2025-03-19 06:49:01,637 - telethon.crypto.aes - INFO - cryptg detected, it will be used for encryption
+2025-03-19 06:49:01,832 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-03-19 06:49:01,975 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-03-19 06:49:02,716 - __main__ - ERROR - Критическая ошибка: EOF when reading a line
