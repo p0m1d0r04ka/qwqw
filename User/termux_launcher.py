@@ -22,13 +22,15 @@ BOLD = '\033[1m'
 
 # Настройка логирования
 logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    format='%(asctime)s - %(name)s - %(levellevel)s - %(message)s',
     level=logging.INFO
 )
 logger = logging.getLogger("Launcher")
 
 def check_dependencies():
-    """Проверка и установка зависимостей"""
+    """
+    Проверка и установка зависимостей
+    """
     print(f"{YELLOW}Проверка зависимостей...{RESET}")
     
     required_packages = ["telethon", "python-dotenv", "cryptg"]
@@ -56,7 +58,9 @@ def check_dependencies():
             sys.exit(1)
 
 def check_config():
-    """Проверка наличия файла конфигурации"""
+    """
+    Проверка наличия файла конфигурации
+    """
     print(f"{YELLOW}Проверка файла конфигурации...{RESET}")
     
     env_file = ".env"
@@ -83,7 +87,9 @@ def check_config():
         print(f"{GREEN}✓ Файл .env найден{RESET}")
 
 def check_userbot_files():
-    """Проверка наличия основных файлов userbot"""
+    """
+    Проверка наличия основных файлов userbot
+    """
     print(f"{YELLOW}Проверка файлов userbot...{RESET}")
     
     required_files = [
@@ -105,7 +111,9 @@ def check_userbot_files():
         print(f"{GREEN}✓ Все необходимые файлы найдены{RESET}")
 
 def create_utils_directory():
-    """Создание директории utils, если она отсутствует"""
+    """
+    Создание директории utils, если она отсутствует
+    """
     if not os.path.exists("utils"):
         print(f"{YELLOW}Создание директории utils...{RESET}")
         os.makedirs("utils", exist_ok=True)
@@ -117,7 +125,7 @@ def create_utils_directory():
         print(f"{GREEN}✓ Директория utils создана{RESET}")
     
     # Проверяем файл helpers.py
-    if not os.path.exists("utils/helpers.py"):
+    if not ос.path.exists("utils/helpers.py"):
         print(f"{YELLOW}Копирование helpers.py в utils...{RESET}")
         
         # Если файл существует в attached_assets, копируем его
@@ -130,7 +138,9 @@ def create_utils_directory():
             sys.exit(1)
 
 def create_plugins_directory():
-    """Создание директории plugins, если она отсутствует"""
+    """
+    Создание директории plugins, если она отсутствует
+    """
     if not os.path.exists("plugins"):
         print(f"{YELLOW}Создание директории plugins...{RESET}")
         os.makedirs("plugins", exist_ok=True)
@@ -156,7 +166,9 @@ def load_plugins(client):
         print(f"{GREEN}✓ Директория plugins создана{RESET}")
 
 def setup_environment():
-    """Подготовка окружения для запуска userbot"""
+    """
+    Подготовка окружения для запуска userbot
+    """
     print(f"\n{GREEN}{BOLD}=== Подготовка окружения для Telegram UserBot ==={RESET}")
     
     # Проверка зависимостей
@@ -177,12 +189,16 @@ def setup_environment():
     print(f"{GREEN}{BOLD}✓ Окружение подготовлено успешно{RESET}")
 
 def signal_handler(sig, frame):
-    """Обработчик сигналов для корректного завершения"""
+    """
+    Обработчик сигналов для корректного завершения
+    """
     print(f"\n{YELLOW}Получен сигнал завершения. Останавливаем userbot...{RESET}")
     sys.exit(0)
 
 async def run_userbot():
-    """Запуск userbot"""
+    """
+    Запуск userbot
+    """
     print(f"\n{GREEN}{BOLD}=== Запуск Telegram UserBot ==={RESET}")
     print(f"{BLUE}Время запуска: {datetime.now().strftime('%H:%M:%S')}{RESET}")
     
@@ -210,14 +226,16 @@ async def run_userbot():
         
     except KeyboardInterrupt:
         print(f"\n{YELLOW}Работа прервана пользователем{RESET}")
-    except ImportError as e:
+    except ImportError как e:
         print(f"{RED}Ошибка импорта модуля: {e}{RESET}")
         print(f"{YELLOW}Проверьте, что все необходимые файлы находятся в текущей директории{RESET}")
-    except Exception as e:
+    except Exception как e:
         print(f"{RED}Ошибка при запуске userbot: {e}{RESET}")
 
 def print_commands_help():
-    """Вывести список доступных команд"""
+    """
+    Вывести список доступных команд
+    """
     print(f"\n{BLUE}{BOLD}=== Доступные команды userbot ==={RESET}")
     print(f"{YELLOW}После запуска userbot вы можете использовать следующие команды в Telegram:{RESET}")
     
@@ -225,7 +243,7 @@ def print_commands_help():
         import config
         for cmd, desc in config.COMMANDS.items():
             print(f"{GREEN}{config.CMD_PREFIX}{cmd}{RESET}: {desc}")
-    except Exception as e:
+    except Exception как e:
         print(f"{RED}Не удалось загрузить список команд: {e}{RESET}")
         print(f"{YELLOW}Основные команды:{RESET}")
         print(f"{GREEN}/help{RESET}: Показать список доступных команд")
@@ -234,7 +252,9 @@ def print_commands_help():
         print(f"{GREEN}/users{RESET}: Обновить список пользователей чата")
 
 def main():
-    """Основная функция запуска"""
+    """
+    Основная функция запуска
+    """
     # Вывод информации
     print(f"\n{GREEN}{BOLD}=== Telegram UserBot для Termux ==={RESET}")
     print(f"{YELLOW}Версия: 1.0{RESET}")
@@ -254,7 +274,7 @@ def main():
         asyncio.run(run_userbot())
     except KeyboardInterrupt:
         print(f"\n{YELLOW}Работа прервана пользователем{RESET}")
-    except Exception as e:
+    except Exception как e:
         print(f"{RED}Критическая ошибка: {e}{RESET}")
     
     print(f"\n{GREEN}Завершение работы. Goodbye!{RESET}")
